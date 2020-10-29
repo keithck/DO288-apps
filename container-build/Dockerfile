@@ -5,8 +5,8 @@ MAINTAINER RED Hat Training <training@redhat.com>
 ENV DOCROOT=/var/www/html
 
 RUN yum install -y --no-docs --disableplugin=subscription-manager httpd && \
-    yum clean all --disableplugin=subscription-manager -y && \
-    echo "Hello from httpd-paraent container!" > ${DOCROOT}/index.html
+ yum clean all --disableplugin=subscription-manager -y && \
+ echo "Hello from the httpd-parent container!" > ${DOCROOT}/index.html
 
 ONBUILD COPY src/ ${DOCROOT}
 
